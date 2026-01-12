@@ -10,7 +10,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="created" class="form-label">Tanggal</label>
-                        <input type="date" class="form-control" id="created" name="created">
+                        <input type="datetime-local" class="form-control" id="created" name="created">
                     </div>
                     <div class="form-group mb-3">
                         <label for="permalink" class="form-label">Permalink</label>
@@ -134,7 +134,7 @@
                 // Optionally set preview if server returns URL
                 if (uploadResponse.fileUrl) {
                     filePreview.src = uploadResponse.fileUrl;
-                    document.getElementById('image').value = uploadResponse.fileUrl;
+                    document.getElementById('image').value = uploadResponse.fileName;
                 }
             } catch (err) {
                 console.error('Upload error:', err);
@@ -157,7 +157,7 @@
         document.getElementById('content').value = article.content ?? '';
 
         if (article.cover) {
-            filePreview.src = article.cover;
+            filePreview.src = '/share_files/' + article.cover;
         }
 
         setEditingState(true);

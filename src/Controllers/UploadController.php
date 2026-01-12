@@ -66,7 +66,7 @@ class UploadController
         http_response_code(200);
         echo json_encode([
             'success' => true,
-            'fileUrl' => 'https://files.dukcapil.tapinkab.go.id/' . $newFileName,
+            'fileUrl' => '/share_files/' . $newFileName,
             'fileName' => $newFileName,
         ]);
     }
