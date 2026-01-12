@@ -1,2 +1,4 @@
 vendor
 composer.lock
+public_html/uploads/*
+Databases/data.db
