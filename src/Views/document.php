@@ -1,3 +1,5 @@
+<?php require_once __DIR__ . '/partials/header.php'; ?>
+
 <div class="container py-4">
     <div class="row">
         <div class="col-md-8">
@@ -57,3 +59,5 @@
         </div>
     </div>
 </div>
+
+<?php require_once __DIR__ . '/partials/footer.php'; ?>
