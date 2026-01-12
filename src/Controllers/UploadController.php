@@ -36,7 +36,7 @@ class UploadController
             return;
         }
 
-        $targetDir = __DIR__ . '/../../public_html/uploads/';
+        $targetDir = __DIR__ . '/../../public_html/share_files/';
         if (!is_dir($targetDir) && !mkdir($targetDir, 0755, true) && !is_dir($targetDir)) {
             http_response_code(500);
             echo json_encode(['success' => false, 'message' => 'Server error']);
@@ -66,7 +66,7 @@ class UploadController
         http_response_code(200);
         echo json_encode([
             'success' => true,
-            'fileUrl' => '/uploads/' . $newFileName,
+            'fileUrl' => 'https://files.dukcapil.tapinkab.go.id/' . $newFileName,
             'fileName' => $newFileName,
         ]);
     }
