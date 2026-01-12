@@ -1,3 +1,5 @@
+<?php require_once __DIR__ . '/partials/header.php'; ?>
+
 <!-- Carousel -->
 <div class="owl-carousel owl-theme">
     <div class="item">
@@ -23,90 +25,112 @@
 </div>
 
 <!-- Content -->
-<div class="container">
+<div class="container-fluid">
+    <div class="content-section bg-white rounded-4 p-4">
+        <h3 class="fw-bold mb-4 border-start border-4 border-primary ps-3">Berita & Kegiatan</h5>
+            <div class="py-4">
+                <div class="owl-carousel owl-theme" id="newsOwlCarousel">
+                    <?php foreach ($data as $value): ?>
+                        <div class="item h-100">
+                            <div class="card shadow-sm h-100">
+                                <img src="https://files.dukcapil.tapinkab.go.id/<?= $value['cover'] ?>" class="card-img-top w-100" alt="..." style="object-fit: cover; aspect-ratio: 16/9; height: 300px;">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title fs-6 flex-grow-1"><?= $value['title'] ?></h5>
+                                </div>
+                                <div class="card-footer border-0 bg-white pb-3 mt-auto">
+                                    <a href="<?= $value['permalink'] ?>" class="btn btn-primary btn-sm p-2 w-100" target="_blank">
+                                        <i class="bi bi-link-45deg"></i> Selengkapnya
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+    </div>
     <div class="row g-4">
         <div class="col-md-8">
             <div class="content-section bg-white rounded-4 p-4">
-                <h3 class="fw-bold mb-4 border-start border-4 border-primary ps-3">Menu Layanan</h3>
-                <div class="my-4">
-                    <div class="row g-4">
-                        <div class="col-sm-6">
-                            <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
-                                <div class="card-body p-4">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="service-icon rounded-circle bg-success bg-opacity-10 p-3 me-3">
-                                            <img src="/assets/img/ONLINE.png" alt="Pondok Dukcapil Icon" width="64"
-                                                height="64">
+                <h3 class="fw-bold mb-4 border-start border-4 border-primary ps-3">Menu Layanan</h5>
+                    <div class="my-4">
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="service-icon rounded-circle bg-success bg-opacity-10 p-3 me-3">
+                                                <img src="/assets/img/ONLINE.png" alt="Pondok Dukcapil Icon" width="64"
+                                                    height="64">
+                                            </div>
+                                            <h5 class="card-title fw-bold mb-0">Pondok Dukcapil</h5>
                                         </div>
-                                        <h5 class="card-title fw-bold mb-0">Pondok Dukcapil</h5>
+                                        <p class="card-text">Pelayanan online adminduk, penerbitan
+                                            Kartu Keluarga, Akta Kelahiran, Pindah Datang dan lainnya.</p>
+                                        <a href="https://pondok.dukcapil.tapinkab.go.id"
+                                            class="btn btn-success rounded-pill px-4" target="_blank">
+                                            <i class="bi bi-box-arrow-up-right me-2"></i>Registrasi
+                                        </a>
                                     </div>
-                                    <p class="card-text">Pelayanan online adminduk, penerbitan
-                                        Kartu Keluarga, Akta Kelahiran, Pindah Datang dan lainnya.</p>
-                                    <a href="https://pondok.dukcapil.tapinkab.go.id"
-                                        class="btn btn-success rounded-pill px-4" target="_blank">
-                                        <i class="bi bi-box-arrow-up-right me-2"></i>Registrasi
-                                    </a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
-                                <div class="card-body p-4">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="service-icon rounded-circle bg-danger bg-opacity-10 p-3 me-3">
-                                            <img src="/assets/img/IKD.png" alt="IKD Icon" width="64" height="64">
+                            <div class="col-sm-6">
+                                <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="service-icon rounded-circle bg-danger bg-opacity-10 p-3 me-3">
+                                                <img src="/assets/img/IKD.png" alt="IKD Icon" width="64" height="64">
+                                            </div>
+                                            <h5 class="card-title fw-bold mb-0">Identitas Kependudukan Digital</h5>
                                         </div>
-                                        <h5 class="card-title fw-bold mb-0">Identitas Kependudukan Digital</h5>
+                                        <p class="card-text">Data kependudukan digital seperti KTP, Kartu Keluarga dan
+                                            dokumen kependudukan lainnya.
+                                        </p>
+                                        <a href="/publikasi/identitas-kependudukan-digital"
+                                            class="btn btn-danger rounded-pill px-4" target="_blank">
+                                            <i class="bi bi-google-play me-2"></i>Unduh
+                                        </a>
                                     </div>
-                                    <p class="card-text">Data kependudukan digital seperti KTP, Kartu Keluarga dan
-                                        dokumen kependudukan lainnya.
-                                    </p>
-                                    <a href="/publikasi/identitas-kependudukan-digital"
-                                        class="btn btn-danger rounded-pill px-4" target="_blank">
-                                        <i class="bi bi-google-play me-2"></i>Unduh
-                                    </a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
-                                <div class="card-body p-4">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="service-icon rounded-circle bg-primary bg-opacity-10 p-3 me-3">
-                                            <img src="/assets/img/petaku.png" alt="Petaku Icon" width="64"
-                                                height="64">
+                            <div class="col-sm-6">
+                                <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="service-icon rounded-circle bg-primary bg-opacity-10 p-3 me-3">
+                                                <img src="/assets/img/petaku.png" alt="Petaku Icon" width="64"
+                                                    height="64">
+                                            </div>
+                                            <h5 class="card-title fw-bold mb-0">Petaku</h5>
                                         </div>
-                                        <h5 class="card-title fw-bold mb-0">Petaku</h5>
+                                        <p class="card-text">Data agregat kependudukan wilayah Kabupaten Tapin,
+                                            seperti jumlah penduduk dan sebagainya.</p>
+                                        <a href="https://petaku.dukcapil.tapinkab.go.id/"
+                                            class="btn btn-primary rounded-pill px-4" target="_blank">
+                                            <i class="bi bi-graph-up me-2"></i>Agregat
+                                        </a>
                                     </div>
-                                    <p class="card-text">Data agregat kependudukan wilayah Kabupaten Tapin,
-                                        seperti jumlah penduduk dan sebagainya.</p>
-                                    <a href="https://petaku.dukcapil.tapinkab.go.id/"
-                                        class="btn btn-primary rounded-pill px-4" target="_blank">
-                                        <i class="bi bi-graph-up me-2"></i>Agregat
-                                    </a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
-                                <div class="card-body p-4">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="service-icon rounded-circle bg-warning bg-opacity-10 p-3 me-3">
-                                            <img src="/assets/img/lenterapian.png" alt="Lentera Pian Icon"
-                                                width="64" height="64">
+                            <div class="col-sm-6">
+                                <div class="card h-100 border-0 shadow-sm rounded-4 service-card">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="service-icon rounded-circle bg-warning bg-opacity-10 p-3 me-3">
+                                                <img src="/assets/img/lenterapian.png" alt="Lentera Pian Icon"
+                                                    width="64" height="64">
+                                            </div>
+                                            <h5 class="card-title fw-bold mb-0">Lentera Pian</h5>
                                         </div>
-                                        <h5 class="card-title fw-bold mb-0">Lentera Pian</h5>
+                                        <p class="card-text">Layanan Terintegrasi Pencatatan Kematian.</p>
+                                        <a href="https://lenterapian.dukcapil.tapinkab.go.id"
+                                            class="btn btn-warning rounded-pill px-4" target="_blank">
+                                            <i class="bi bi-link-45deg me-2"></i>Kunjungi
+                                        </a>
                                     </div>
-                                    <p class="card-text">Layanan Terintegrasi Pencatatan Kematian.</p>
-                                    <a href="https://lenterapian.dukcapil.tapinkab.go.id"
-                                        class="btn btn-warning rounded-pill px-4" target="_blank">
-                                        <i class="bi bi-link-45deg me-2"></i>Kunjungi
-                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
         <div class="col-md-4">
@@ -284,3 +308,5 @@
         </div>
     </div>
 </div>
+
+<?php require_once __DIR__ . '/partials/footer.php'; ?>

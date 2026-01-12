@@ -10,7 +10,7 @@
                         <a class="text-decoration-none link-light" href="https://goo.gl/maps/s5wKAGkWBXkgAu139"
                             target="_blank">
                             <p class="mb-0">Jl. Datu Nuraya, Kawasan Rantau Baru, Kel. Rantau Kiwa, Kec. Tapin Utara (71111),
-                            Kab. Tapin, Kalimantan Selatan</p>
+                                Kab. Tapin, Kalimantan Selatan</p>
                         </a>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                         <i class="bi bi-headset text-primary"></i> Layanan Pengaduan
                     </h5>
                     <div class="contact-links">
-                        <a href="https://wa.me/6281395607482" target="_blank" 
+                        <a href="https://wa.me/6281395607482" target="_blank"
                             class="text-decoration-none d-block mb-3">
                             <i class="bi bi-whatsapp text-success"></i>
                             <span class="ms-2 text-light">0811-511-3141 (WhatsApp)</span>
@@ -96,5 +96,3 @@
         </div>
     </div>
 </footer>
-</body>
-</html>

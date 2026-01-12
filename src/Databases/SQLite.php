@@ -37,7 +37,7 @@ class SQLite
         return $stmt->execute($data);
     }
 
-    public function read(string $table, array $conditions = []): array
+    public function read(string $table, array $conditions = [], ?int $limit = null): array
     {
         $sql = "SELECT * FROM $table";
         if (!empty($conditions)) {
@@ -48,6 +48,9 @@ class SQLite
             $sql .= " WHERE " . implode(" AND ", $where);
         }
         $sql .= " ORDER BY created DESC";
+        if ($limit !== null) {
+            $sql .= " LIMIT $limit";
+        }
         $stmt = $this->db->prepare($sql);
         $stmt->execute($conditions);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -30,7 +30,8 @@ class ViewController
 
     public function home(): void
     {
-        $this->render('home', ['title' => 'DISDUKCAPIL TAPIN']);
+        $result = $this->sqlite->read('articles', [], 6);
+        $this->render('home', ['title' => 'DISDUKCAPIL TAPIN', 'data' => $result]);
     }
 
     public function preview(string $permalink): void
@@ -88,6 +89,16 @@ class ViewController
                 ], false);
                 break;
         }
+    }
+
+    public function login(): void
+    {
+        $this->render('login', ['title' => 'LOGIN - DISDUKCAPIL TAPIN']);
+    }
+
+    public function dashboard(): void
+    {
+        $this->render('dashboard', ['title' => 'DASHBOARD - DISDUKCAPIL TAPIN']);
     }
 
 
