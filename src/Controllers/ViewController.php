@@ -98,7 +98,8 @@ class ViewController
 
     public function dashboard(): void
     {
-        $this->render('dashboard', ['title' => 'DASHBOARD - DISDUKCAPIL TAPIN']);
+        $data = $this->sqlite->read('articles', [], 10);
+        $this->render('dashboard', ['title' => 'DASHBOARD - DISDUKCAPIL TAPIN', 'data' => $data]);
     }
 
 

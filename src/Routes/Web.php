@@ -13,6 +13,18 @@ $router->get('/dokumen/([a-z_-]+)', 'ViewController@document');
 $router->before('POST', '/upload', 'AuthController@limitAccess');
 $router->post('/upload', 'UploadController@uploadFile');
 
+$router->before('POST', '/create-article', 'AuthController@limitAccess');
+$router->post('/create-article', 'AdminController@createArticle');
+
+$router->before('POST', '/update-article', 'AuthController@limitAccess');
+$router->post('/update-article', 'AdminController@updateArticle');
+
+$router->before('GET', '/article/(\d+)', 'AuthController@limitAccess');
+$router->get('/article/(\d+)', 'AdminController@getArticle');
+
+$router->before('DELETE', '/delete-article/(\d+)', 'AuthController@limitAccess');
+$router->delete('/delete-article/(\d+)', 'AdminController@deleteArticle');
+
 $router->before('GET', '/login', 'AuthController@logged');
 $router->get('/login', 'ViewController@login');
 
