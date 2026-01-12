@@ -1,3 +1,5 @@
+<?php require_once __DIR__ . '/partials/header.php'; ?>
+
 <div class="container py-4">
     <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4 shadow-sm">
         <ol class="breadcrumb mb-0">
@@ -46,3 +48,5 @@
         </div>
     </div>
 </div>
+
+<?php require_once __DIR__ . '/partials/footer.php'; ?>
